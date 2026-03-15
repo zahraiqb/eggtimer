@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ImageBackground, Image, Absolute } from 'react-native';
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -8,16 +8,19 @@ export default function HomeScreen({ navigation }) {
     style={styles.background}
     >
     
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to my Egg Timer app!</Text>
-
-      <Button
-      title="Let's Get Cracking!"
-      onPress={() => navigation.navigate('EggType')}
-      />
-
-    </View>
-    </ImageBackground>
+    <Image
+    source={require('../assets/egg3.png')}
+    style={styles.image}
+    />
+      <Pressable
+      style={({ pressed }) => [
+        styles.crackButton,
+        { backgroundColor: pressed ? '#644f0a' : '#eebf27' }
+      ]}
+      onPress={() => navigation.navigate('EggType')}>
+      <Text style={styles.buttonText}> Lets Get Cracking!</Text>
+      </Pressable>
+      </ImageBackground>
   );
 }
 
@@ -36,7 +39,35 @@ const styles = StyleSheet.create({
     flex: 1,  // Ensures the background image takes up the full screen
     resizeMode: 'cover',  // Ensures the image stretches properly
     justifyContent: 'center', 
-  }
-  
+    height: 900,
+    width: 400
 
+  },
+  crackButton: {
+    marginTop:350,
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    borderRadius:9,
+    backgroundColor: '#F4BA1E',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    width: 260,
+    marginLeft: 70
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFF',
+    textAlign: 'center',
+  },
+image: {
+  width: 300, // Adjust size as needed
+  height: 200,
+  position: 'absolute',
+  top: '34%',
+  marginBottom: 400,
+  marginLeft: 50
+}
 });
