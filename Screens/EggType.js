@@ -13,38 +13,44 @@ const eggs = [
   {id: '8', name: 'Scrambled', description: 'Fluffy and Light, clouds for breakfast anyone?', image:require('../assets/egg8.png') },
 ];
 
+
 export default function EggType({ navigation }) {
-<Pressable
-style = {({ pressed }) => [
-  styles.crackButton,
-  { backgroundColor: pressed ? '#644f0a' : '#eebf27'}
-]}
-onPress = {() => navigation.navigate('SoftBoiledEgg')}>
-  <Text style={styles.buttonText}> Soft Boiled Egg </Text>
-      
+
+  const renderEgg = ({ item }) => (
+    <TouchableOpacity 
+      style={styles.eggCard}
+      onPress={() => {
+        if (item.name === 'Soft Boiled Egg') {
+          navigation.navigate('SoftBoiledEgg');
+        }
+      }}
+    >
       <Image source={item.image} style={styles.eggImage} />
       <Text style={styles.eggName}>{item.name}</Text>
-      </Pressable>
-};
+    </TouchableOpacity>
+  );
 
-  
   return (
     <ImageBackground
-    source={require('../assets/background.png')}
-    style={styles.background}
+      source={require('../assets/background.png')}
+      style={styles.background}
     >
-    <View style={styles.container}>
-      <Text style={styles.title}>What type of egg are you making today?</Text>
-      <FlatList
-        data={eggs}
-        renderItem={renderEgg}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        contentContainerStyle={styles.list}
-      />
-    </View>
+      <View style={styles.container}>
+        <Text style={styles.title}>
+          What type of egg are you making today?
+        </Text>
+
+        <FlatList
+          data={eggs}
+          renderItem={renderEgg}
+          keyExtractor={(item) => item.id}
+          numColumns={2}
+          contentContainerStyle={styles.list}
+        />
+      </View>
     </ImageBackground>
   );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -55,11 +61,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
     color: '#D2B48C',
-    fontFamily: 'Trebuchet MS'
   },
   list: {
     justifyContent: 'center',
@@ -73,14 +77,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   eggImage: {
-    width: 1860,
-    height: 200,
+    width: 140,
+    height: 140,
     resizeMode: 'contain',
   },
   eggName: {
-    fontFamily: 'Courier',
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginTop: 6,
     color: '#D2B48C',
     textAlign: 'center'
@@ -89,6 +91,5 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
-
   }
 });
