@@ -1,10 +1,10 @@
-#Egg Timer App
+# Egg Timer App
 
-##Overview
+## Overview
 
 The Egg Timer App is a simple React Native application built using Expo that helps users cook different types of eggs perfectly. Users can select the type of egg they want, and a timer will start to guide them through the cooking process.
 
-##Technologies Used
+## Technologies Used
 - React Native
 - Expo
 - JavaScript
