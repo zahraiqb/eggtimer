@@ -10,12 +10,18 @@ A React Native application built using Expo that helps users cook different type
 - JavaScript
 - React Navigation
 
+## Project Structure
+App.js – Navigation setup
+Screens/ – Contains code for all app screens
+assets/ – Images/graphics used in the app
+
 ## Homepage preview
 
-<p align="center">
-  <img src="assets/preview.png" width="400", height="700"/>
+<p>
+  <img src="assets/preview.png" width="200", height="600"/>
 </p>
 
 ### Notes
+This project is a work in progress. Some screens are still being developed and not all features are fully implemented yet.
 The graphics used in the UI are also drawn by me (which is why all the eggs look like distant cousins)
 
