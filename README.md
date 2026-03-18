@@ -11,14 +11,14 @@ A React Native application built using Expo that helps users cook different type
 - React Navigation
 
 ## Project Structure
-App.js – Navigation setup
-Screens/ – Contains code for all app screens
-assets/ – Images/graphics used in the app
+- App.js – Navigation setup
+- Screens/ – Contains code for all app screens
+- assets/ – Images/graphics used in the app
 
 ## Homepage preview
 
-<p>
-  <img src="assets/preview.png" width="200", height="600"/>
+<p align="center">
+  <img src="assets/preview.png" width="250", height="650"/>
 </p>
 
 ### Notes
