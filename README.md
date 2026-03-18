@@ -13,7 +13,7 @@ A React Native application built using Expo that helps users cook different type
 ## Homepage preview
 
 <p align="center">
-  <img src="assets/preview.png" width="600"/>
+  <img src="assets/preview.png" width="400", height="600"/>
 </p>
 
 ### Notes
