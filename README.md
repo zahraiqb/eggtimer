@@ -11,8 +11,7 @@ A React Native application built using Expo that helps users cook different type
 - React Navigation
 
 ## Homepage preview
-(assets/Screenshot 2026-03-18 at 16.20.55.png)
-
+assets/Screenshot 2026-03-18 at 16.20.55.png
 
 ### Notes
 The graphics used in the UI are also drawn by me (which is why all the eggs look like distant cousins)
